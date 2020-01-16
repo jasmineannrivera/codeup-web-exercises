@@ -1,3 +1,49 @@
 header {
     text-align: center;
 }
+.fancy-header {
+    text-decoration: underline;
+    color: mediumvioletred;
+}
+body {
+    background-color: papayawhip;
+    background-image: url("../img/pexels-photo-2088170.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Cute Font', cursive;
+    font-size: 1.5em;
+    color: #D30C7B;
+}
+
+ul {
+    list-style: circle;
+}
+
+ol {
+    list-style: lower-roman;
+}
+
+table {
+    background-color: papayawhip;
+    border: mediumvioletred solid 1px;
+}
+tr, td {
+    font-size: 1.5em;
+    color: mediumvioletred;
+}
+
+a:link {
+    color: mediumaquamarine;
+}
+
+a:visited {
+    color: rebeccapurple;
+}
+
+a:hover {
+    color: aquamarine;
+}
+
+a:active {
+    color: blueviolet;
+}

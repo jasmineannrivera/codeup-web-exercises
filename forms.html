@@ -5,32 +5,35 @@
     <title>Register With Us</title>
 </head>
 <body>
-<form action="https://www.elformo.com/forms/13a96555-252d-4d1f-92ba-263a30de95a4" method="POST">
-    <input type="text" name="email" placeholder="Enter your email address">
-    <br>
-    <input type="password" name="password" placeholder="Enter your password">
-    <br>
-    <textarea name="bio" placeholder="Enter your bio here"></textarea>
-    <br>
-    How did you hear about us?
-    <br>
-    <input type="checkbox" name="ad" value="billboard">billboard<br>
-    <input type="checkbox" name="ad" value="radio advertisement">radio advertisement<br>
-    <input type="checkbox" name="ad" value="internet advertisement">internet advertisement<br>
-    <input type="checkbox" name="ad" value="other">other<br>
+    <form action="https://www.elformo.com/forms/13a96555-252d-4d1f-92ba-263a30de95a4" method="POST">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email address">
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password">
+        <br>
+        <label for="bio">Bio:</label>
+        <textarea name="bio" id="bio" placeholder="Enter your bio here"></textarea>
+        <br>
+        How did you hear about us?
+        <br>
+        <input type="checkbox" name="ad" value="billboard">billboard<br>
+        <input type="checkbox" name="ad" value="radio advertisement">radio advertisement<br>
+        <input type="checkbox" name="ad" value="internet advertisement">internet advertisement<br>
+        <input type="checkbox" name="ad" value="other">other<br>
 <!--What happens if the inputs are given different name attributes?
     multiple inputs can be selected and they will be submitted all separately.
 -->
-    Which browser are you using?
-    <br>
-    <select name="internet_browser">
-        <option value="chrome">Chrome</option>
-        <option value="safari">Safari</option>
-        <option value="internet-explorer">Internet Explorer</option>
-    </select>
-    <br>
-    <button type="submit">Submit the form</button>
-</form>
+     Which browser are you using?
+        <br>
+        <select name="internet_browser">
+            <option value="chrome">Chrome</option>
+            <option value="safari">Safari</option>
+            <option value="internet-explorer">Internet Explorer</option>
+        </select>
+        <br>
+        <button type="submit">Submit the form</button>
+    </form>
 
 </body>
 </html>

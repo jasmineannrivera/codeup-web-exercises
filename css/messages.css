@@ -8,6 +8,26 @@ body, html {
 .message {
     border: lightgray 1px solid;
     border-radius: 5px;
-    padding: .5em;
-    margin: 1em;
+    padding: .75em;
+    margin: .5em auto;
+}
+
+.message-info {
+    background-color: #CDDDFC;
+    color: #5E58AE;
+}
+
+.message-success {
+    background-color: #CFF3DA;
+    color: darkgreen;
+}
+
+.message-warning {
+    background-color: #FCFBC9;
+    color: #907E2E;
+}
+
+.message-error {
+    background-color: #F8D3D7;
+    color: #96374D;
 }

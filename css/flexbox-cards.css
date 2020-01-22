@@ -78,6 +78,7 @@ a {
 .card {
     /* This is a flex item */
     flex-basis: 100%;
+/*Defines the size of an element before remaining space is distributed.*/
 
 
 

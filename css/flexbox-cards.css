@@ -72,11 +72,12 @@ a {
     align-items: center;
 
 
+
 }
 
 .card {
     /* This is a flex item */
-
+    flex-basis: 100%;
 
 
 

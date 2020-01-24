@@ -1,2 +1,61 @@
 
 
+body {
+	margin: 0;
+}
+
+
+
+.wrapper {
+	display: grid;
+	height: 100vh;
+	grid-column-gap: 10px;
+	grid-row-gap: 10px;
+	grid-template-columns: 1fr 3fr 2fr;
+	grid-template-rows: 30px repeat(2, 1fr) 80px 30px;
+	grid-template-areas:
+		"header header header"
+		"nav article ads"
+		"nav article ads"
+		"nav footer footer"
+		"nav power power";
+}
+header, nav, article, aside, #power, footer {
+	background: papayawhip;
+}
+
+#header {
+	grid-area: header;
+}
+ul {
+	display: flex;
+	flex-direction: row;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	height: inherit;
+	align-items: center;
+
+}
+header li{
+	margin: .5em;
+}
+
+#nav {
+	grid-area: nav;
+}
+
+#article {
+	grid-area: article;
+}
+
+#ads {
+	grid-area: ads;
+}
+
+#footer {
+	grid-area: footer;
+}
+#power {
+	grid-area: power;
+}

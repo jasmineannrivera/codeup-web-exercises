@@ -1,33 +1,32 @@
-
-
 body {
 	margin: 0;
-}
 
+}
 
 
 .wrapper {
 	display: grid;
 	height: 100vh;
-	grid-column-gap: 10px;
-	grid-row-gap: 10px;
-	grid-template-columns: 1fr 3fr 2fr;
-	grid-template-rows: 30px repeat(2, 1fr) 80px 30px;
+	grid-template-columns: 200px 3fr 300px;
+	grid-template-rows: 30px repeat(2, 1fr) 40px 80px 30px;
 	grid-template-areas:
 		"header header header"
 		"nav article ads"
 		"nav article ads"
+		"nav numbers numbers"
 		"nav footer footer"
 		"nav power power";
 }
 header, nav, article, aside, #power, footer {
-	background: papayawhip;
-}
 
+}
+/*header stuff*/
 #header {
 	grid-area: header;
+	background: black;
+
 }
-ul {
+#header ul {
 	display: flex;
 	flex-direction: row;
 	list-style: none;
@@ -39,23 +38,55 @@ ul {
 }
 header li{
 	margin: .5em;
+
+}
+header li a {
+	color: white;
+	text-decoration: none;
 }
 
+/*nav stuff*/
 #nav {
 	grid-area: nav;
+	background: #F0F0F0;
 }
-
+#nav ul {
+	list-style: none;
+	height: inherit;
+}
+#nav li {
+	margin: 1em;
+}
+/*article stuff*/
 #article {
 	grid-area: article;
 }
-
+h1 {
+	color: #419388;
+}
+/*ad stuff*/
 #ads {
 	grid-area: ads;
 }
-
-#footer {
-	grid-area: footer;
+aside {
+/*numbers stuff*/
 }
+#numbers {
+	grid-area: numbers;
+}
+/*footer stuff*/
+#footer {
+	color: white;
+	grid-area: footer;
+	background: #666666;
+}
+/*power stuff*/
 #power {
+	color: white;
 	grid-area: power;
+	background: #333333;
+}
+
+#power a {
+	color: white;
 }

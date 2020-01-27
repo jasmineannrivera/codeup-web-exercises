@@ -1,0 +1,10 @@
+
+/*Desktop Layout*/
+@media screen and (min-width:992px) {
+
+
+	img {
+		height: 385px;
+		width: 890px;
+	}
+}

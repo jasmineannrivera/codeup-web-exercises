@@ -11,8 +11,8 @@ body {
 		"header header header"
 		"nav article ads"
 		"nav footer footer";
-	grid-row-gap: 10px;
-	grid-column-gap: 10px;
+	grid-gap: 10px;
+
 
 
 }

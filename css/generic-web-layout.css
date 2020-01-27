@@ -65,6 +65,9 @@ header li a {
 /*article stuff*/
 #article {
 	grid-area: article;
+	display: flex;
+	flex-direction: column;
+
 }
 h1 {
 	color: #419388;
@@ -110,6 +113,11 @@ aside p {
 	text-decoration: none;
 
 }
+/* a:hover {*/
+/*	background: black;*/
+/*	 color: white;*/
+
+/*}*/
 /*footer stuff*/
 #footer {
 	color: white;

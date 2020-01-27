@@ -17,8 +17,8 @@ body {
 		"two five five six"
 		"two seven eight nine"
 		"two ten ten ten";
-	grid-column-gap: 10px;
-	grid-row-gap: 10px;
+	grid-gap: 10px;
+
 }
 
 

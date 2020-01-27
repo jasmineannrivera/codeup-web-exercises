@@ -54,8 +54,13 @@ header li a {
 	list-style: none;
 	height: inherit;
 }
-#nav li {
+#nav li  {
 	margin: 1em;
+
+}
+#nav li a {
+	color: black;
+	text-decoration: none;
 }
 /*article stuff*/
 #article {
@@ -63,6 +68,10 @@ header li a {
 }
 h1 {
 	color: #419388;
+	padding: 10px;
+}
+#article p {
+	padding: 10px;
 }
 /*ad stuff*/
 #ads {
@@ -85,6 +94,21 @@ aside p {
 /*number stuff*/
 #numbers {
 	grid-area: numbers;
+}
+#numbers ul {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+
+	list-style: none;
+
+}
+#numbers li a {
+	padding: 10px;
+	color: black;
+	text-decoration: none;
+
 }
 /*footer stuff*/
 #footer {

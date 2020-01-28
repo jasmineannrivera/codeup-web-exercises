@@ -1,9 +1,20 @@
 
+#navbarSupportedContent > ul > li:nth-child(3) > form > button {
+	background: white;
+	border: 1px solid darkgrey;
+}
+
+
+.container {
+	padding: 0;
+}
+
+
 .jumbotron {
 	background-image: url("../img/pizza.png");
-
-
 }
+
+
 h1 {
 	text-align: center;
 	background: white;

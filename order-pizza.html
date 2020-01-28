@@ -69,24 +69,20 @@
 		<h2>Build your own pizza!</h2>
 		<br>
 <!--Nav tabs-->
-		<ul class="nav nav-tabs">
-
+		<ul class="nav nav-tabs" id="myTab" role="tablist">
 			<li class="nav-item">
-				<a class="nav-link active" href="#">Size
-					and Crust</a>
-
+				<a class="nav-link active" id="size-tab" data-toggle="tab" href="#size" role="tab" aria-controls="size" aria-selected="true">Size and Crust</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="#">Cheese
-					and Sauce</a>
+				<a class="nav-link" id="cheese-tab" data-toggle="tab" href="#cheese" role="tab" aria-controls="cheese" aria-selected="false">Cheese and Sauce</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link"
-				   href="#">Toppings</a>
+				<a class="nav-link" id="topping-tab" data-toggle="tab" href="#topping" role="tab" aria-controls="topping" aria-selected="false">Toppings</a>
 			</li>
 		</ul>
 <!--Giant card for size and crust-->
-		<div class="card">
+		<div class="tab-pane fade show active" id="size" role="tabpanel" aria-labelledby="size-tab">
+<!--		<div class="card" id="size">-->
 			<div class="card-header blue">
 				Choose size and crust
 			</div>
@@ -154,7 +150,7 @@
 			</div>
 		</div>
 <!--Giant card for cheese and sauce-->
-		<div class="card">
+		<div class="tab-pane fade show active" id="cheese" role="tabpanel" aria-labelledby="cheese-tab">
 			<div class="card-header blue">
 				Choose Cheese and Sauce
 			</div>
@@ -214,7 +210,7 @@
 			</div>
 		</div>
 <!--Giant card for toppings-->
-		<div class="card">
+		<div class="tab-pane fade show active" id="topping" role="tabpanel" aria-labelledby="topping-tab">
 			<div class="card-header blue">
 				Choose Toppings
 			</div>
@@ -335,4 +331,3 @@
 </html>
 
 
-<!--code reformat code-->

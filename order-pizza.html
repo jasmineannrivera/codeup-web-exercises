@@ -65,22 +65,22 @@
 <!--Nav tabs-->
 		<ul class="nav nav-tabs" id="myTab" role="tablist">
 			<li class="nav-item">
-				<a class="nav-link active" id="size-tab" data-toggle="tab" href="#size" role="tab" aria-controls="size" aria-selected="true">
+				<a class="nav-link active" id="nav-size-tab" data-toggle="tab" href="#nav-size" role="tab" aria-controls="size" aria-selected="true">
 					<span class="badge badge-pill badge-secondary">1</span>Size and Crust</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" id="cheese-tab" data-toggle="tab" href="#cheese" role="tab" aria-controls="cheese" aria-selected="false">
+				<a class="nav-link" id="nav-cheese-tab" data-toggle="tab" href="#nav-cheese" role="tab" aria-controls="cheese" aria-selected="false">
 					<span class="badge badge-pill badge-secondary">2</span>Cheese and Sauce</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" id="topping-tab" data-toggle="tab" href="#topping" role="tab" aria-controls="topping" aria-selected="false">
+				<a class="nav-link" id="nav-topping-tab" data-toggle="tab" href="#nav-topping" role="tab" aria-controls="topping" aria-selected="false">
 					<span class="badge badge-pill badge-secondary">3</span>Toppings</a>
 			</li>
 		</ul>
 <!--div in which all 3 giant cards go for nav tab functionality-->
 		<div class="tab-content" id="myTabContent">
 <!--Giant card for size and crust-->
-			<div class="tab-pane fade show active" id="size" role="tabpanel" aria-labelledby="size-tab">
+			<div class="tab-pane fade show active" id="nav-size" role="tabpanel" aria-labelledby="size">
 		<div class="card" id="size">
 			<div class="card-header blue">
 				Choose size and crust
@@ -152,76 +152,82 @@
 		</div>
 
 <!--Giant card for cheese and sauce-->
-		<div class="tab-pane fade" id="cheese" role="tabpanel" aria-labelledby="cheese-tab">
-			<div class="card-header blue">
-				Choose Cheese and Sauce
-			</div>
-			<div class="card-body">
-	<!--Card with cheese-->
-				<div class="card">
+		<div class="tab-pane fade" id="nav-cheese" role="tabpanel" aria-labelledby="cheese">
+			<div class="card">
+				<div class="card-header blue">
+					Choose Cheese and Sauce
+				</div>
+
+				<div class="card-body" id="cheese">
 					<div class="card-header">
 						Cheese
 					</div>
-					<div class="card-body">
-						<div class="form-group">
-							<label for="exampleFormControlSelect1">How
-								much?</label>
-							<select class="form-control"
-							        id="exampleFormControlSelect1">
-								<option>Light
-								</option>
-								<option>Normal
-								</option>
-								<option>Extra
-								</option>
-								<option>Double
-								</option>
-							</select>
-						</div>
+					<!--Card with cheese-->
+					<div class="card">
 
-					</div>
-				</div>
-				<br>
-	<!--second card with sauce-->
-				<div class="card">
-					<div class="card-header">
-						Sauce
-					</div>
-					<div class="card-body">
-						<div class="form-group">
-							<label for="exampleFormControlSelect1">What
-								type?</label>
-							<select class="form-control"
-							        id="exampleFormControlSelect2">
-								<option>Tomato
-									sauce
-								</option>
-								<option>Marinara
-									sauce
-								</option>
-								<option>BBQ
-									sauce
-								</option>
-								<option>Alfredo
-									sauce
-								</option>
-							</select>
+						<div class="card-body">
+							<div class="form-group">
+								<label for="exampleFormControlSelect1">How
+									much?</label>
+								<select class="form-control"
+								        id="exampleFormControlSelect1">
+									<option>Light
+									</option>
+									<option>Normal
+									</option>
+									<option>Extra
+									</option>
+									<option>Double
+									</option>
+								</select>
+							</div>
+
 						</div>
 					</div>
-				</div>
-	<!--buttons-->
-				<div class="card-footer text-muted text-right">
-					<a href="#" class="btn btn-primary">< Previous Step</a>
-					<a href="#" class="btn btn-primary">Next Step ></a>
+					<br>
+					<!--second card with sauce-->
+					<div class="card">
+						<div class="card-header">
+							Sauce
+						</div>
+						<div class="card-body">
+							<div class="form-group">
+								<label for="exampleFormControlSelect1">What
+									type?</label>
+								<select class="form-control"
+								        id="exampleFormControlSelect2">
+									<option>Tomato
+										sauce
+									</option>
+									<option>Marinara
+										sauce
+									</option>
+									<option>BBQ
+										sauce
+									</option>
+									<option>Alfredo
+										sauce
+									</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<!--buttons-->
+					<div class="card-footer text-muted text-right">
+						<a href="#" class="btn btn-primary">< Previous Step</a>
+						<a href="#" class="btn btn-primary">Next Step ></a>
+					</div>
 				</div>
 			</div>
 		</div>
 <!--Giant card for toppings-->
-			<div class="tab-pane fade" id="topping" role="tabpanel" aria-labelledby="topping-tab">
-			<div class="card-header blue">
-				Choose Toppings
-			</div>
-			<div class="card-body">
+			<div class="tab-pane fade" id="nav-topping" role="tabpanel" aria-labelledby="topping">
+			<div class="card">
+				<div class="card-header blue">
+					Choose Toppings
+				</div>
+			<div class="card-body" id="topping">
+
 	<!--Card with checks for meats-->
 				<div class="card">
 					<div class="card-header">
@@ -300,8 +306,10 @@
 				</div>
 			</div>
 		</div>
+		</div>
 	</div>
 	</div>
+
 
 
 

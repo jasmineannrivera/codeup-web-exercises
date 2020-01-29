@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport"
 	      content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet"
 	      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
@@ -18,41 +18,35 @@
 <body>
 <!--Nav Bar-->
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="#">Pizza
-			World</a>
-		<button class="navbar-toggler" type="button"
-		        data-toggle="collapse"
-		        data-target="#navbarSupportedContent"
-		        aria-controls="navbarSupportedContent"
-		        aria-expanded="false"
-		        aria-label="Toggle navigation">
+		<a class="navbar-brand" href="#">Pizza World</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
-		<div class="collapse navbar-collapse"
-		     id="navbarSupportedContent">
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item active">
-					<a class="nav-link" href="#">Order
-						online <span class="sr-only">(current)</span></a>
+					<a class="nav-link" href="#">Order Online<span class="sr-only">(current)</span></a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link"
-					   href="#">Menu</a>
+					<a class="nav-link" href="#">Menu</a>
 				</li>
+
 				<li>
 					<form class="form-inline my-2 my-lg-0">
-						<input class="form-control mr-sm-2"
-						       type="search"
-						       placeholder="Zipcode"
-						       aria-label="Search">
-						<button type="button" class="btn btn-light">Search stores near you!</button>
+						<input class="form-control mr-sm-2" type="search" placeholder="Zip code" aria-label="Search">
+						<button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search stores near you!</button>
 					</form>
 				</li>
 			</ul>
-			<button type="button"
-			        class="btn btn-secondary btn-sm">
-				Small button
-			</button>
+
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item">
+					<a class="nav-link" href="#"><i class="fas fa-user"></i>
+						Sign Up
+					</a>
+				</li>
+			</ul>
 		</div>
 	</nav>
 	<br>
@@ -71,18 +65,21 @@
 <!--Nav tabs-->
 		<ul class="nav nav-tabs" id="myTab" role="tablist">
 			<li class="nav-item">
-				<a class="nav-link active" id="size-tab" data-toggle="tab" href="#size" role="tab" aria-controls="size" aria-selected="true">Size and Crust</a>
+				<a class="nav-link active" id="size-tab" data-toggle="tab" href="#size" role="tab" aria-controls="size" aria-selected="true">
+					<span class="badge badge-pill badge-secondary">1</span>Size and Crust</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" id="cheese-tab" data-toggle="tab" href="#cheese" role="tab" aria-controls="cheese" aria-selected="false">Cheese and Sauce</a>
+				<a class="nav-link" id="cheese-tab" data-toggle="tab" href="#cheese" role="tab" aria-controls="cheese" aria-selected="false">
+					<span class="badge badge-pill badge-secondary">2</span>Cheese and Sauce</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" id="topping-tab" data-toggle="tab" href="#topping" role="tab" aria-controls="topping" aria-selected="false">Toppings</a>
+				<a class="nav-link" id="topping-tab" data-toggle="tab" href="#topping" role="tab" aria-controls="topping" aria-selected="false">
+					<span class="badge badge-pill badge-secondary">3</span>Toppings</a>
 			</li>
 		</ul>
 <!--Giant card for size and crust-->
 		<div class="tab-pane fade show active" id="size" role="tabpanel" aria-labelledby="size-tab">
-<!--		<div class="card" id="size">-->
+		<div class="card" id="size">
 			<div class="card-header blue">
 				Choose size and crust
 			</div>
@@ -100,14 +97,14 @@
 						<hr>
 <!--radio buttons-->
 						<div class="form-check">
-							<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+							<input class="form-check-input" type="radio" name="exampleRadios" id="small-hand" value="option1" checked>
 							<label class="form-check-label" for="exampleRadios1">
 								Small (10")
 							</label>
 						</div>
 						<hr>
 						<div class="form-check">
-							<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+							<input class="form-check-input" type="radio" name="exampleRadios" id="medium-hand" value="option2">
 							<label class="form-check-label" for="exampleRadios2">
 								Medium (12")
 							</label>
@@ -127,14 +124,14 @@
 						<hr>
 						<!--radio buttons-->
 						<div class="form-check">
-							<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+							<input class="form-check-input" type="radio" name="exampleRadios" id="medium-thin" value="option1" checked>
 							<label class="form-check-label" for="exampleRadios1">
 								Medium (12")
 							</label>
 						</div>
 						<hr>
 						<div class="form-check">
-							<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+							<input class="form-check-input" type="radio" name="exampleRadios" id="large-thin" value="option2">
 							<label class="form-check-label" for="exampleRadios2">
 								Large (14")
 							</label>
@@ -143,14 +140,15 @@
 					</div>
 				</div>
 				<br>
-				<button type="button"
-				        class="btn btn-secondary btn-sm">
-					Next Step >
-				</button>
+
+			</div>
+			<div class="card-footer text-muted text-right">
+				<a href="#" class="btn btn-primary">Next Step ></a>
 			</div>
 		</div>
+		</div>
 <!--Giant card for cheese and sauce-->
-		<div class="tab-pane fade show active" id="cheese" role="tabpanel" aria-labelledby="cheese-tab">
+		<div class="tab-pane fade" id="cheese" role="tabpanel" aria-labelledby="cheese-tab">
 			<div class="card-header blue">
 				Choose Cheese and Sauce
 			</div>
@@ -207,10 +205,15 @@
 						</div>
 					</div>
 				</div>
+				<div class="card-footer text-muted text-right">
+					<a href="#" class="btn btn-primary">< Previous Step</a>
+					<a href="#" class="btn btn-primary">Next Step ></a>
+				</div>
 			</div>
 		</div>
 <!--Giant card for toppings-->
-		<div class="tab-pane fade show active" id="topping" role="tabpanel" aria-labelledby="topping-tab">
+
+		<div class="tab-pane fade" id="topping" role="tabpanel" aria-labelledby="topping-tab">
 			<div class="card-header blue">
 				Choose Toppings
 			</div>
@@ -288,33 +291,18 @@
 								Jalapeno Peppers
 							</label>
 						</div>
-
-
 					</div>
 				</div>
-				<br>
-
-				<button type="button"
-				        class="btn btn-secondary btn-sm next">
-					Next Step >
-				</button>
+				<div class="card-footer text-muted text-right">
+					<a href="#" class="btn btn-primary"><i class="fas fa-shopping-cart"></i> Checkout</a>
+				</div>
 			</div>
-
-
-
-
-
-
 		</div>
+	</div>
 
 
 
 
-
-
-
-
-</div>
 
 <!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->

@@ -7,7 +7,9 @@ body {
 	color: #f5f6f7;
 	background-color: #F7DFD4;
 }
-p {font-size: 16px;}
+p {
+	font-size: 16px;
+}
 
 
 .margin {margin-bottom: 45px;}
@@ -17,7 +19,9 @@ p {font-size: 16px;}
 	padding-bottom: 70px;
 }
 
-
+a {
+	color: white;
+}
 /* Backgrounds for sections of the page*/
 
 .bg-1 {

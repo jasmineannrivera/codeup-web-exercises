@@ -77,3 +77,23 @@ var totalPayment = (googleRate * googleHours) + (amazonRate * amazonHours) + (fa
 // alert total payments received this week
 
 alert("Your total payment for the week is $" + totalPayment);
+
+
+// A student can be enrolled in a class only if the class is not full and the class schedule does not conflict with her current schedule.
+
+// confirm class is not full
+
+var classNotFull = confirm("Class is not full");
+
+// confirm there are no scheduling conflicts
+
+var noConflicts = confirm("Schedules do not conflict");
+
+
+// if both are true student may enroll in class
+
+var studentEnrolled = classNotFull && noConflicts;
+
+// alert true or false
+
+alert("Student can enroll: " + studentEnrolled);

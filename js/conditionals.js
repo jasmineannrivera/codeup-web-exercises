@@ -15,7 +15,29 @@
  *
  * Can you refactor your code to use functions?
  */
+// alert("Would you like to enter a number?");
+// prompt("Enter number");
+var pizzaPreference = prompt("What kind of pizza do you like?");
 
+if (pizzaPreference === "pineapple and hot sauce") {
+    alert("What a coincidence, that's my favorite!");
+} else if (pizzaPreference === "cheese") {
+    alert("Just plain cheese? Okay...");
+} else {
+    alert(pizzaPreference + " isn't my favorite, but let's order some!");
+}
+
+var numberGame = confirm("Would you like to enter a number?");
+if (numberGame) {
+    var number = prompt("Enter number");
+
+} else {
+    alert("fine don't play..")
+}
+    if (number % 2 !== 0) {
+    alert("your number is odd!")
+    } else
+        alert("your number is even!");
 /* ########################################################################## */
 
 /**

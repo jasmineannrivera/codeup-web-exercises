@@ -23,9 +23,17 @@
     //if they cancel don't move on
     var numberGame = confirm("Would you like to enter a number?");
     if (numberGame === true) {
-        prompt("Enter number");
+        var number = prompt("Enter number");
+    } else {
+            alert("fine don't play");
     }
-        
+
+    if (number % 2 === 0) {
+        alert("Your number is even!")
+    } else if (number % 2 !== 0) {
+    alert("Your number is odd!")
+    }
+
 
 /* ########################################################################## */
 

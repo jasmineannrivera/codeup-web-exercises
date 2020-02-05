@@ -97,3 +97,28 @@ var studentEnrolled = classNotFull && noConflicts;
 // alert true or false
 
 alert("Student can enroll: " + studentEnrolled);
+
+
+
+// A product offer can be applied only if a person buys more than 2 items, and the offer has not expired.
+// Premium members do not need to buy a specific amount of products.
+
+// confirm if person is premium member
+
+var premiumMember = confirm("Are you a premium member?");
+
+// ask person how many products they have purchased
+
+var productsPurchased = prompt("How many products have you purchased?");
+
+// confirm if offer is still valid
+
+var offerValid = confirm("Is the offer still valid?");
+
+// discount applied variable
+
+var discountApplied = offerValid && productsPurchased >= 2 || offerValid && premiumMember;
+
+// alert if discount is honored
+
+alert("Discount is honored: " + discountApplied);

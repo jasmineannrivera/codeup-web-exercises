@@ -40,3 +40,40 @@ var totalPrice = (littleMermaid * rentalFee) + (brotherBear * rentalFee) + (herc
 alert("Your total price is " + "$" +totalPrice + ".");
 
 
+
+// Suppose you're working as a contractor for 3 companies: Google, Amazon and Facebook,' +
+// ' they pay you a different rate per hour. Google pays $400, Amazon $380, and Facebook ' +
+// '$350. How much will you receive in payment for this week? You worked 10 hours for ' +
+// 'Facebook, 6 hours for Google and 4 hours for Amazon.
+
+// ask user for Google's hourly rate
+
+var googleRate = prompt("What is your hourly rate at Google?");
+
+// ask user for Amazon's hourly rate
+
+var amazonRate = prompt("What is your hourly rate at Amazon?");
+
+// ask user for Facebook's hourly rate
+
+var facebookRate = prompt("What is your hourly rate at Facebook?");
+
+// ask user how many hours they worked for Google
+
+var googleHours = prompt("How many hours did you work for Google this week?");
+
+// ask user how many hours they worked for Amazon
+
+var amazonHours = prompt("How many hours did you work for Amazon this week?");
+
+// ask user how many hours they worked for Facebook
+
+var facebookHours = prompt("How many hours did you work for Facebook this week?");
+
+// calculate hours * rates
+
+var totalPayment = (googleRate * googleHours) + (amazonRate * amazonHours) + (facebookRate * facebookHours);
+
+// alert total payments received this week
+
+alert("Your total payment for the week is $" + totalPayment);

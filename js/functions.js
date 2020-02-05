@@ -53,11 +53,7 @@
      * number)
      */
     function isTwo(number) {
-        if (number === 2) {
-            return true
-        } else {
-            return false;
-        }
+        return number === 2;
     }
 
     console.log(isTwo(random));
@@ -84,9 +80,9 @@
      * then display the dollar amount they should tip
      */
 // ask total
-    var billTotal = prompt("What is your bill total?");
+    var billTotal = parseFloat(prompt("What is your bill total?"));
 // ask tip percentage
-    var tipPercentage = prompt("What percentage would you like to tip?")
+    var tipPercentage = parseFloat(prompt("What percentage would you like to tip?"));
 //calculate tip
     var tip = billTotal * tipPercentage;
 //alert tip

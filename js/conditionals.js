@@ -1,5 +1,5 @@
 "use strict";
-
+(function () {
 /**
  * TODO:
  * Write some JavaScript that uses a `confirm` dialog to ask the user if they
@@ -17,27 +17,16 @@
  */
 // alert("Would you like to enter a number?");
 // prompt("Enter number");
-var pizzaPreference = prompt("What kind of pizza do you like?");
 
-if (pizzaPreference === "pineapple and hot sauce") {
-    alert("What a coincidence, that's my favorite!");
-} else if (pizzaPreference === "cheese") {
-    alert("Just plain cheese? Okay...");
-} else {
-    alert(pizzaPreference + " isn't my favorite, but let's order some!");
-}
+    //confirm if user would like to enter number
+    //if they click ok prompt for number
+    //if they cancel don't move on
+    var numberGame = confirm("Would you like to enter a number?");
+    if (numberGame === true) {
+        prompt("Enter number");
+    }
+        
 
-var numberGame = confirm("Would you like to enter a number?");
-if (numberGame) {
-    var number = prompt("Enter number");
-
-} else {
-    alert("fine don't play..")
-}
-    if (number % 2 !== 0) {
-    alert("your number is odd!")
-    } else
-        alert("your number is even!");
 /* ########################################################################## */
 
 /**
@@ -63,8 +52,8 @@ if (numberGame) {
 // - `colors`: a list of the colors of the rainbow
 // - `randomColor`: contains a single random color value from the list (this
 //                  will contain a different color every time the page loads)
-var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
-var randomColor = colors[Math.floor(Math.random() * colors.length)];
+    var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+    var randomColor = colors[Math.floor(Math.random() * colors.length)];
 /**
  * TODO:
  * Pass the `randomColor` variable to your function and console.log the results.
@@ -114,3 +103,6 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  */
 // Generate a random number between 0 and 6
 // var luckyNumber = Math.floor(Math.random() * 6);
+
+
+})();

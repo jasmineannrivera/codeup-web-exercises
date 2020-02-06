@@ -15,6 +15,29 @@
  *
  * Can you refactor your code to use functions?
  */
+var willContinueNumberGame = confirm("Will you enter a number?");
+if (willContinueNumberGame) {
+    var userInput = Number(prompt("What number would you like to enter"));
+    var isNumber = !isNaN(userInput);
+
+
+    if (isNumber) {
+
+        var userNum = parseInt(userInput);
+        var isEven = userInput % 2 === 0;
+        var isEvenMessage = (isEven) ? "Number is even" : "Number is odd";
+        alert(isEvenMessage);
+        alert(userNum + 100);
+
+        var isPositive = userNum > 0;
+        var isPositiveMessage = (isPositive) ? "Number is positive" : "Number is negative";
+        alert(isPositiveMessage);
+    } else {
+        alert("That's not a number!");
+    }
+}
+
+
 
 
 // alert("Would you like to enter a number?");
@@ -47,15 +70,15 @@
  * console.logging the function's return value
  */
 function analyzeColor(color) {
-    var colorMessage = "";
     if (color === "blue") {
-        colorMessage = "Blue is the color of the sky";
+        return "blue is the color of the sky";
     } else if (color === "red") {
-        colorMessage = "Strawberries are red";
+        return "Strawberries are red";
     } else if (color === "cyan") {
-        colorMessage = "I don't know anything about cyan";
+        return "I don't know anything about cyan"
+    } else {
+        return "I don't know anything of that color";
     }
-    return colorMessage;
 }
     console.log(analyzeColor("blue"));
     console.log(analyzeColor("red"));
@@ -72,20 +95,44 @@ function analyzeColor(color) {
  * Pass the `randomColor` variable to your function and console.log the results.
  * You should see a different message every time you refresh the page
  */
-
-/**
+console.log(analyzeColor(randomColor));
+    /**
  * TODO:
- * Refactor your above function to use a switch-case statement
- */
+ //Refactor your above function to use a switch-case statement
+*/
+  function colorAnalyze(color) {
+     var colorMessage;
+        switch (color) {
+            case "blue":
+                colorMessage = "the sky is blue";
+                break;
+            case "red":
+                colorMessage = "strawberries are red";
+                break;
+            case "cyan":
+                colorMessage = "I don't know anything about cyan";
+                break;
+            default:
+                colorMessage = "I don't know anything about that color";
+                break;
 
-/**
+        }
+            return colorMessage;
+    }
+
+    console.log(colorAnalyze(randomColor));
+
+    /**
  * TODO:
  * Prompt the user for a color when the page loads, and pass the input from the
  * user to your `analyzeColor` function. Alert the return value from your
  * function to show it to the user.
  */
+var userColor = prompt("Enter a color");
+    alert((analyzeColor(userColor)));
 
-/* ########################################################################## */
+    /* ########################################################################## */
+
 
 /**
  * TODO:
@@ -106,7 +153,21 @@ function analyzeColor(color) {
  * Test your function by passing it various values and checking for the expected
  * return value.
  */
-
+function calculateTotal(luckyNumber, totalAmount) {
+    if (luckyNumber === 0) {
+        return totalAmount;
+    } else if (luckyNumber === 1) {
+        return totalAmount - (totalAmount * .10);
+    } else if (luckyNumber === 2) {
+        return totalAmount - (totalAmount * .25);
+    } else if (luckyNumber === 3) {
+        return totalAmount - (totalAmount * .35);
+    } else if (luckyNumber === 4) {
+        return totalAmount - (totalAmount * .50);
+    } else {
+        return 0;
+    }
+    }
 /**
  * TODO:
  * Uncomment the line below to generate a random number between 0 and 6.
@@ -115,7 +176,7 @@ function analyzeColor(color) {
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
-// var luckyNumber = Math.floor(Math.random() * 6);
+var luckyNumber = Math.floor(Math.random() * 6);
 
-
+    console.log(calculateTotal(luckyNumber, 100));
 })();

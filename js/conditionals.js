@@ -15,24 +15,64 @@
  *
  * Can you refactor your code to use functions?
  */
+
+
 // alert("Would you like to enter a number?");
 // prompt("Enter number");
 
     //confirm if user would like to enter number
     //if they click ok prompt for number
     //if they cancel don't move on
-    var numberGame = confirm("Would you like to enter a number?");
-    if (numberGame === true) {
-        var number = prompt("Enter number");
-    } else {
-            alert("fine don't play");
-    }
 
-    if (number % 2 === 0) {
-        alert("Your number is even!")
-    } else if (number % 2 !== 0) {
-    alert("Your number is odd!")
-    }
+ var playNumberGame = confirm("Would you like to enter a number?");
+
+ if (playNumberGame) {
+    var userInput = prompt("What number would you like to enter");
+ }
+    var isNum = !isNaN(userInput);
+
+    if (isNum) {
+
+        var userNum = parseFloat(userInput);
+
+         var isEven = userInput % 2 === 0;
+         var isOdd = userInput % 2 !== 0;
+         var isEvenMessage =
+
+
+
+
+
+        // alert the following...
+//
+//         // whether the number is even or odd
+//
+//         var isEven = userInput % 2 === 0;
+//         var isEvenMessage = (isEven) ? "Number is even" : "Number is odd";
+//         alert(isEvenMessage);
+//
+//         // what the number plus 100 is
+//
+//         alert(userNum + 100);
+//
+//         // if the number is negative or positive
+//
+//         var isPos = Math.sign(userNum) === 1;
+//         var isPosMessage = (isPos) ? "Number is positive" : "Number is negative";
+//         alert(isPosMessage);
+//
+//
+//     } else {
+//
+//     // otherwise
+//         // if what the user enters is not a number, use an alert to tell them that, and
+//         // * do *not* display any of the above information.
+//         alert("That's not a number!");
+//     }
+//
+//
+//
+// }
 
 
 /* ########################################################################## */

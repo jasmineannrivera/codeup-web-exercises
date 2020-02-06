@@ -24,55 +24,7 @@
     //if they click ok prompt for number
     //if they cancel don't move on
 
- var playNumberGame = confirm("Would you like to enter a number?");
 
- if (playNumberGame) {
-    var userInput = prompt("What number would you like to enter");
- }
-    var isNum = !isNaN(userInput);
-
-    if (isNum) {
-
-        var userNum = parseFloat(userInput);
-
-         var isEven = userInput % 2 === 0;
-         var isOdd = userInput % 2 !== 0;
-         var isEvenMessage =
-
-
-
-
-
-        // alert the following...
-//
-//         // whether the number is even or odd
-//
-//         var isEven = userInput % 2 === 0;
-//         var isEvenMessage = (isEven) ? "Number is even" : "Number is odd";
-//         alert(isEvenMessage);
-//
-//         // what the number plus 100 is
-//
-//         alert(userNum + 100);
-//
-//         // if the number is negative or positive
-//
-//         var isPos = Math.sign(userNum) === 1;
-//         var isPosMessage = (isPos) ? "Number is positive" : "Number is negative";
-//         alert(isPosMessage);
-//
-//
-//     } else {
-//
-//     // otherwise
-//         // if what the user enters is not a number, use an alert to tell them that, and
-//         // * do *not* display any of the above information.
-//         alert("That's not a number!");
-//     }
-//
-//
-//
-// }
 
 
 /* ########################################################################## */
@@ -94,7 +46,20 @@
  * Test your function by passing various string literals to it and
  * console.logging the function's return value
  */
-
+function analyzeColor(color) {
+    var colorMessage = "";
+    if (color === "blue") {
+        colorMessage = "Blue is the color of the sky";
+    } else if (color === "red") {
+        colorMessage = "Strawberries are red";
+    } else if (color === "cyan") {
+        colorMessage = "I don't know anything about cyan";
+    }
+    return colorMessage;
+}
+    console.log(analyzeColor("blue"));
+    console.log(analyzeColor("red"));
+    console.log(analyzeColor("cyan"));
 // Don't change the next two lines!
 // These lines create two variables for you:
 // - `colors`: a list of the colors of the rainbow

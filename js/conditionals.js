@@ -18,17 +18,21 @@
 var willContinueNumberGame = confirm("Will you enter a number?");
 if (willContinueNumberGame) {
     var userInput = Number(prompt("What number would you like to enter"));
+    //function(userInput) return !NaN(userInput) -> true or false
     var isNumber = !isNaN(userInput);
 
 
     if (isNumber) {
 
         var userNum = parseInt(userInput);
+        //function isEven (userInput) return num % 2 === 0; -> true or false
         var isEven = userInput % 2 === 0;
         var isEvenMessage = (isEven) ? "Number is even" : "Number is odd";
         alert(isEvenMessage);
+        //function plus100 (userInput) return userInput + 100 -> number
         alert(userNum + 100);
 
+        //isPositive(userInput) return num > 0; -> true or false
         var isPositive = userNum > 0;
         var isPositiveMessage = (isPositive) ? "Number is positive" : "Number is negative";
         alert(isPositiveMessage);
@@ -36,6 +40,7 @@ if (willContinueNumberGame) {
         alert("That's not a number!");
     }
 }
+
 
 
 

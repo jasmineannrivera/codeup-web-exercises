@@ -179,4 +179,7 @@ function calculateTotal(luckyNumber, totalAmount) {
 var luckyNumber = Math.floor(Math.random() * 6);
 
     console.log(calculateTotal(luckyNumber, 100));
+
+    var userTotal = Number(prompt("What is your total bill today?"));
+    alert("Your lucky number is " + luckyNumber + " and your new total is $" + calculateTotal(luckyNumber, userTotal).toFixed(2));
 })();

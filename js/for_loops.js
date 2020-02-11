@@ -59,7 +59,13 @@
     // 88888888
     // 999999999
 
-
+    for (var outer = 1; outer <= 9; outer++) {
+        var output = "";
+        for (var inner = 1; inner <= outer; inner++) {
+            output += outer;
+        }
+        console.log(output);
+    }
 
 
     // Create a for loop that uses console.log to create the output shown below.

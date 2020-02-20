@@ -48,6 +48,9 @@ document.getElementById('zoom5').addEventListener('click', function() {
 document.getElementById('zoom15').addEventListener('click', function() {
     map.zoomTo(15, { duration: 6000 });
 });
+document.getElementById('zoom10').addEventListener('click', function() {
+    map.zoomTo(10, { duration: 6000 });
+});
 
 document.getElementById('zoom20').addEventListener('click', function() {
     map.zoomTo(20, { duration: 6000 });

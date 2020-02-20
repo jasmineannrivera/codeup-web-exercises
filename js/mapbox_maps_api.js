@@ -1,23 +1,24 @@
 "use strict";
 //Making map and setting sichuan point
+var sichuan = [-98.623396, 29.471790];
 mapboxgl.accessToken = mapboxToken;
 var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v11',
     zoom: 2,
 
-    center: [-98.623396, 29.471790]
+    center: sichuan
 });
 
 
 //Popup and Marker
 var sichuanPopup = new mapboxgl.Popup()
-    .setLngLat([-98.623396, 29.471790])
+    .setLngLat(sichuan)
     .setHTML("Sichuan House")
     .addTo(map);
 
 var sichuanMarker = new mapboxgl.Marker(markerOptions)
-    .setLngLat([-98.623396, 29.471790])
+    .setLngLat(sichuan)
     .setPopup(sichuanPopup)
     .addTo(map);
 

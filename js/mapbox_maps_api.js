@@ -61,16 +61,19 @@ document.getElementById('zoom20').addEventListener('click', function() {
 var restaurants = [
     {
         "name": "Sichuan House",
-        "recommendation": "Han Shao Bai"
+        "recommendation": "Han Shao Bai",
+        "address": sichuan
 
     },
     {
         "name": "Down on Grayson",
-        "recommendation": "Char King Burger"
+        "recommendation": "Char King Burger",
+        "address": "303 E Grayson St, San Antonio, TX 78215"
     },
     {
         "name": "Nama Ramen",
-        "recommendation": "Tonkotsu Ramen"
+        "recommendation": "Tonkotsu Ramen",
+        address:  "6565 Babcock Rd Suite 19, San Antonio, TX 78249"
     }
 ];
 
@@ -85,3 +88,19 @@ function switchLayer(layer) {
 for (var i = 0; i < inputs.length; i++) {
     inputs[i].onclick = switchLayer;
 }
+
+
+restaurants.forEach(function (x) {
+    geocode(x.address, mapboxToken).then(function (result){
+        var popup = new mapboxgl.Popup()
+            .setLngLat(result)
+            .setHTML(x.name + "<br>" + "Reccommendation: " + x.recommendation)
+            .addTo(map);
+        new mapboxgl.Marker(markerOptions)
+            .setLngLat(result)
+            .setPopup(popup)
+            .addTo(map);
+
+    })
+});
+

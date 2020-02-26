@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery Exercise</title>
+</head>
+<body>
+	<div class="stuff">
+		<h1>Title</h1>
+		<p id="first" class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet atque beatae cum enim et harum illo iure labore laboriosam molestiae neque omnis quas repellat similique sint tempora, vitae. Facere, voluptatibus.</p>
+		<p class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet atque beatae cum enim et harum illo iure labore laboriosam molestiae neque omnis quas repellat similique sint tempora, vitae. Facere, voluptatibus.</p>
+		<p class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet atque beatae cum enim et harum illo iure labore laboriosam molestiae neque omnis quas repellat similique sint tempora, vitae. Facere, voluptatibus.</p>
+	</div>
+	<div class="list">
+		<ul>
+			<li>Here</li>
+			<li>is</li>
+			<li>stuff.</li>
+		</ul>
+	</div>
+<script src="js/jquery-2.2.4.js"></script>
+<script type="text/javascript">
+    "use strict";
+
+    $(document).ready(function() {
+
+        alert("DOM has finished loading!");
+
+    });
+
+    var contents = $("#first").html();
+    alert(contents);
+
+</script>
+</body>
+</html>

@@ -3,7 +3,10 @@
 <head>
 	<meta charset="UTF-8">
 	<title>jQuery FAQ</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 	<style>
+
 		dt {
 			font-size: 16px;
 			font-weight: bold;
@@ -20,17 +23,39 @@
 			margin-bottom: 40px;
 			text-decoration: underline;
 		}
-		*{
-			text-align: center;
+		button {
+			margin-bottom: 30px;
+		}
+		h3 {
+			margin-top: 30px;
+		}
+		img {
 
+			height: 500px;
+			width: 300px;
+			border: 10px saddlebrown solid;
+		}
+		.paintings {
+			display: flex;
+			justify-content: space-evenly;
 
 		}
+		.switch {
+			margin-top: 10px;
+			margin-left: 115px;
+		}
+
 
 	</style>
 </head>
 <body>
-	<h1>National Park FAQs</h1>
-	<div id="list">
+<div class="jumbotron jumbotron-fluid">
+	<div class="container">
+		<h1 class="display-4 text-center">National Parks FAQs</h1>
+
+	</div>
+</div>
+	<div id="dlist" class="ml-4">
 	<dl>
 		<dt>Who is the director of the National Park Service?</dt>
 		<dd class="invisible">David Vela is the Deputy Director, exercising the authority of the Director of the National Park Service.</dd>
@@ -58,8 +83,61 @@
 		<dt>What is the most-visited national park?</dt>
 		<dd class="invisible">Golden Gate National Recreation Area with 15 million visitors in 2019.</dd>
 	</dl>
+		<button id="styler">See FAQ Answers!</button>
 	</div>
-	<button id="styler">See FAQ Answers!</button>
+	<div class="more-lists ml-5">
+	<div id="list1">
+		<h3>Yellowstone National Park</h3>
+		<ul class="list-group list-group-flush">
+			<li class="list-group-item">At 3,472 square miles—over 2.2 million acres—Yellowstone is larger than the states of Rhode Island and Delaware combined. </li>
+			<li class="list-group-item">The park sits atop the largest supervolcano in North America.</li>
+			<li class="list-group-item">Yellowstone was originally nicknamed “Wonderland.”</li>
+			<li class="list-group-item">The U.S. Army ran the park for over 30 years.</li>
+		</ul>
+	</div>
+	<div id="list2">
+		<h3>Yosemite National Park</h3>
+		<ul class="list-group list-group-flush">
+			<li class="list-group-item">Three of the 10 highest waterfalls in the world are located in Yosemite National Park.</li>
+			<li class="list-group-item">The park’s diverse landscape supports more than 400 species.</li>
+			<li class="list-group-item">Yosemite’s granite rock formations glow like fire at sunset.</li>
+			<li class="list-group-item">Yosemite is the only national park to bid to host the winter Olympics.</li>
+		</ul>
+	</div>
+	<div id="list3">
+		<h3>Death Valley National Park</h3>
+		<ul class="list-group list-group-flush">
+			<li class="list-group-item">One of the hottest temperatures on earth was recorded in 1913 in Death Valley National Park, registering 134 degrees.</li>
+			<li class="list-group-item">Coming in at a whopping more than 3.4 million acres, Death Valley National Park is the largest national park in the Lower 48.</li>
+			<li class="list-group-item">Death Valley is the driest place in the country. In 1929, there was not a single drop of rain recorded in Death Valley.</li>
+			<li class="list-group-item">Death Valley is home to the country’s lowest point, Badwater Basin, which lies at 282 feet below sea level.</li>
+		</ul>
+	</div>
+	<button class= "mt-4" id="highlightBtn">Click me!</button>
+	</div>
+	<div class="paintings">
+	<div class="leftImage pics">
+		<img class= "geyser" src="img/geyser.jpeg" alt=""> <br>
+		<button class="leftSwitch">Switch!</button>
+	</div>
+	<div class="centerImage pics">
+		<img class= "waterfall" src="img/waterfall.jpeg" alt=""> <br>
+		<button class="centerSwitch">Switch!</button>
+	</div>
+	<div class="rightImage pics">
+		<img class= "death" src="img/death.jpeg" alt=""> <br>
+		<button class="rightSwitch">Switch!</button>
+	</div>
+	</div>
+	<footer class= "bg-light">
+		<h4>Sources</h4>
+		<a href="https://www.nps.gov/aboutus/faqs.htm ">https://www.nps.gov/aboutus/faqs.htm</a> <br>
+		<a href="https://www.history.com/news/10-things-you-may-not-know-about-yellowstone-national-park ">https://www.history.com/news/10-things-you-may-not-know-about-yellowstone-national-park</a> <br>
+		<a href="https://www.outdoorproject.com/articles/59-fun-facts-about-our-national-parks">https://www.outdoorproject.com/articles/59-fun-facts-about-our-national-parks</a> <br>
+		<a href="https://www.doi.gov/blog/9-things-you-didnt-know-about-yosemite-national-park">https://www.doi.gov/blog/9-things-you-didnt-know-about-yosemite-national-park</a> <br>
+		<a href="https://www.austinadventures.com/travel-resources/10-ridiculously-cool-things-didnt-know-death-valley/">https://www.austinadventures.com/travel-resources/10-ridiculously-cool-things-didnt-know-death-valley</a> <br>
+
+	</footer>
 </body>
 <script src="js/jquery-2.2.4.js"></script>
 
@@ -68,35 +146,61 @@
 
 
 
-
     // Create CSS that sets elements with the invisible class to visibility: hidden;
 
 
 
-
-    // Update the page with jQuery to add a link that toggles the class invisible on and off for all dd elements.
-	// function toggle() {
-	// 	$("<dt>").click(function (event) {
-	// 		event.preventDefault();
-	// 		$("dd").toggleClass('invisible');
-    //     })
-    // }
-    // $(document).ready(function() {
-    //     $('#styler').click(function (e) {
-    //         e.preventDefault();
-    //         $("dd").toggleClass("invisible");
-    //     });
-    // }();
-
     $('#styler').click(function(e) {
         e.preventDefault();
-        $("dd").toggleClass("invisible");
-
+        $("dd").toggleClass("invisible").toggleClass("animated").toggleClass("fadeIn");
     });
 
     // When any one dt is clicked, the element that was clicked should be highlighted.
 	$("dt").click(function () {
 		$(this).css("background-color", "papayawhip");
     })
+    // Create a button that, when clicked, makes the last li in each ul have a yellow background.
+    var highlightBtn = $("#highlightBtn");
+
+    highlightBtn.click(function() {
+        $("ul").each(function(index, element) {
+            $(element).children().last().css("background-color", "lightyellow");
+        });
+    });
+
+    // When any h3 is clicked, the lis underneath it should be bolded. Use font-weight: bold to achieve this.
+
+	var h3 = $("h3");
+
+	h3.click(function () {
+		$(this).next().css("font-weight", "bold");
+    });
+
+	//When any list item is clicked, first li of the parent ul should have a font color of blue.
+
+	var li = $("li");
+
+	li.click(function () {
+
+            $(this).parent().children().first().css("color", "blue");
+
+    });
+			var leftImage = $(".geyser");
+			var centerImage = $(".waterfall");
+			var rightImage = $(".death");
+    //     The left frame swaps to the right and takes the image from the frame in the center.
+            $(".leftSwitch").click( function () {
+				$(leftImage).attr('src', 'img/waterfall.jpeg');
+				$(centerImage).attr('src', 'img/geyser.jpeg');
+            })
+    //     The center frame swaps randomly to either the left or right.
+    //     The right frame swaps to the left and takes the image from the frame in the center.
+            $(".rightSwitch").click( function () {
+                $(rightImage).attr('src', 'img/geyser.jpeg');
+                $(centerImage).attr('src', 'img/death.jpeg');
+            })
+
+	
+
 </script>
 </html>

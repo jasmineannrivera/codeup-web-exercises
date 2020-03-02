@@ -22,25 +22,27 @@
 <script type="text/javascript">
     "use strict";
 
-        $('h1').click(function () {
-            this.css("background-color", "papayawhip");
+    var title = $("#title");
+
+        title.click(function () {
+            $(this).css("background-color", "lightblue");
         });
 
         console.log("test");
 
         // Make all paragraphs have a font size of 18px when they are double clicked
         $('p').dblclick(function () {
-            this.css("font-size", "18px");
+            $("p").css("font-size", "18px");
         });
 
         // Set all li text color to red when the mouse is hovering; reset to black when it is not.
 
         $('li').hover(
             function() {
-                $(this).css('color', 'red');
+                $("li").css('color', 'red');
             },
             function() {
-                $(this).css('color', 'black');
+                $("li").css('color', 'black');
             }
         );
 

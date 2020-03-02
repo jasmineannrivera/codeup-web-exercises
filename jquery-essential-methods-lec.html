@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style type="text/css">
+		.red {
+			color: red;
+			fill: red;
+		}
+		#red.circle {
+			background-color: red;
+		}
+		.orange {
+			color: darkorange;
+			fill: darkorange;
+		}
+		#orange.circle {
+			background-color: darkorange;
+		}
+		.yellow {
+			color: #FACE0A;
+			fill: #FACE0A;
+		}
+		#yellow.circle {
+			background-color: #FACE0A;
+		}
+		.green {
+			color: #8cd63d;
+			fill: #8cd63d;
+		}
+		#green.circle {
+			background-color: #8cd63d;
+		}
+		.blue {
+			color: darkblue;
+			fill: darkblue;
+		}
+		#blue.circle {
+			background-color: darkblue;
+		}
+		.purple {
+			color: rebeccapurple;
+			fill: rebeccapurple;
+		}
+		#purple.circle {
+			background-color: rebeccapurple;
+		}
+		.black {
+			fill: black;
+		}
+		#rainbow.circle {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+		}
+		#rainbowBorders {
+			width: 5px;
+			height: 5px;
+			border-radius: 2.5px;
+			box-shadow:
+					0 0 0 5px #ff0000,
+					0 0 0 10px #ff7700,
+					0 0 0 15px #FFDD00,
+					0 0 0 20px #00FF00,
+					0 0 0 25px #0000FF,
+					0 0 0 30px #C77DF3,
+					0 0 0 35px #8A2BE2;
+		}
+		.circle {
+			width: 70px;
+			height: 70px;
+			border-radius: 35px;
+			float: left;
+			margin-left: 15px;
+		}
+		.circles {
+			width: 80%;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-evenly;
+			margin-bottom: 30px;
+		}
+		.caps {
+			text-transform: uppercase;
+		}
+	</style>
+</head>
+<body>
+<h1 id="project-header" class="codeup">jQuery Essential Methods</h1>
+<hr>
+<div>
+	<h2 class="logo-header">Codeup Logo in SVG Form - <span id="colorText" class="green">green</span></h2>
+	<!-- SVG Codeup Logo for manipulation -->
+	<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" preserveAspectRatio="xMidYMid meet" viewBox="0 0 600 450" width="600" height="450">
+		<defs class="codeup-logo">
+			<path d="M174.86 146.23L354.65 146.23L354.65 169.34L174.86 169.34L174.86 146.23Z" id="path1" class="green"/>
+			<path d="M355.05 146.04L467.84 302.75L449.09 316.25L336.3 159.53L355.05 146.04Z" id="path2" class="green"/>
+			<path d="M121.64 234.48L301.43 234.48L301.43 257.58L121.64 257.58L121.64 234.48Z" id="path3" class="green"/>
+			<path d="M103.05 244.83L173.89 145.52L192.7 158.94L121.86 258.25L103.05 244.83Z" id="path4" class="green"/>
+			<path d="M301.73 234.48L400.75 372.08L382 385.57L282.98 247.98L301.73 234.48Z" id="path5" class="green"/>
+			<path d="M372.41 372.9L448.17 289.06L465.31 304.54L389.55 388.39L372.41 372.9Z" id="path6" class="green"/>
+		</defs>
+		<g>
+			<g><use xlink:href="#path1" opacity="1" fill="#8cd63d" fill-opacity="1"/></g>
+			<g><use xlink:href="#path2" opacity="1" fill="#8cd63d" fill-opacity="1"/></g>
+			<g><use xlink:href="#path5" opacity="1" fill="#8cd63d" fill-opacity="1"/></g>
+			<g><use xlink:href="#path6" opacity="1" fill="#8cd63d" fill-opacity="1"/></g>
+			<g><use xlink:href="#path4" opacity="1" fill="#8cd63d" fill-opacity="1"/></g>
+			<g><use xlink:href="#path3" opacity="1" fill="#8cd63d" fill-opacity="1"/></g>
+		</g>
+	</svg>
+
+	<!-- Color Balls -->
+	<div class="circles">
+		<div id="red" class="circle"></div>
+		<div id="orange" class="circle"></div>
+		<div id="yellow" class="circle"></div>
+		<div id="green" class="circle"></div>
+		<div id="blue" class="circle"></div>
+		<div id="purple" class="circle"></div>
+		<div id="rainbow" class="circle">
+			<div id="rainbowBorders"></div>
+		</div>
+	</div>
+</div>
+
+<script src="js/jquery-2.2.4.js"></script>
+<script type="javascript">
+    "use strict";
+
+    // .html()
+    //   .css()
+    //     .addClass()
+    //       .removeClass()
+    //         .toggleClass()
+
+
+    // ******* Getters and Setters **********
+
+    // Getter for text of logo color
+
+    // Setter for text of logo color
+
+    // Getter for section color
+
+    // Setter for the section color
+    // change all sections if 'all' is passed in
+    // if individual section is passed in, change its color (used for Rainbow effect)
+
+
+    // reset all path elements to default, and change the 'color' text in the h2 to 'green'
+
+
+    // write a function called rainbowLogo() that changes the logo to rainbow colors
+
+
+    // Set a variable called circleClickCount, to keep track of how many times an individual circle has been clicked
+
+
+    // Add a click listener to each of the 'circle' elements at the botto of the page, and make each color circle
+    // change the logo to the clicked color, or rainbow, if rainbow was clicked
+    // If the same color is clicked twice, toggle the 'caps' class to UPPERCASE and lowercase the color name
+
+
+    // *********************** Traversing Methods ********************************* //
+
+    // now let's traverse some elements
+
+    // .each()   .first()    .last()    .children()    .parent()    .next()
+
+    // TODO: Let's give each of the selection circles a 1px black border
+
+
+    // TODO: Let's take the border away from the first circle
+
+
+    // TODO: Let's make the last circle disappear
+
+
+    // TODO: Find the children of the circle row, and remove borders from all of them, then unhide the last circle
+
+
+    // TODO: while changing the fist path element to have a black fill, give its grandparent a light gray background and 10px padding
+
+
+    // TODO: change the second path element to blue, then change the 'next' element to yellow
+
+
+    // TODO: What's the difference between changing the class to change the color, and simply changing the color directly?
+</script>
+</body>
+</html>

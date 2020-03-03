@@ -4,6 +4,7 @@
     <title>Online Store</title>
 </head>
 <body>
+<div id="main">
 
 <h1>My Tool Store</h1>
 
@@ -18,6 +19,8 @@
     </thead>
     <tbody id="insertProducts"></tbody>
 </table>
+<button id="refresh">Refresh Table</button>
+</div>
 
 <script src="js/jquery-2.2.4.js"></script>
 
@@ -29,7 +32,6 @@
         var getTools = $.ajax("data/inventory.json");
 
         getTools.done(function(data) {
-            console.log(data.title);
             $.each(data, function (index, tool) {
 
                 var content;
@@ -45,11 +47,16 @@
 
 
         });
-        generateTools().fail(function(data){
-            console.log("Something went wrong.");
-        });
+
     }
     generateTools();
+
+    $('#refresh').click(function(){
+
+        $('#insertProducts').html("");
+
+        generateTools();
+    });
 
 
 

@@ -1,8 +1,11 @@
 (function () {
     "use strict";
 
+
     function generateWeather() {
+
         $.ajax("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSkyToken + "/29.4241,-98.4936").done(function (data) {
+
             var dailyWeather = data.daily;
 
             var forecast = [
@@ -66,7 +69,13 @@
                     $("#tomorrow").html(tomorrow);
                     $("#thirdDay").html(thirdDay);
 
+
+
+
+
             })
+            //dew pt and humidity stuff here
+
         });
 
     }
@@ -74,32 +83,16 @@
 
 
 
+//dew points
+    // 15-30 dry dew
+    // 30-40 mid-range
+    // 40-60 optimal
+    // 60+ high dew
 
-
-
-
-
-
-
-
-
-
-    // console.log(weather);
-    // console.log(new Date(data.currently.time * 1000));
-    // console.log(data.currently.temperature);
-    // $.each(data, function (index, weatherThing) {
-    //     var weatherContent = "";
-    //     weatherContent +=
-    //         (
-    //             "<p>" + data.currently.temperature + "</p>"
-    //         );
-    //     $("#weather").html(weatherContent);
-    //
-    //
-    // })
-
-
-
+//humidity
+    // below 30% - dry
+    // 30-60%- optimal
+    // 60%+ - humid
 
 
 

@@ -2,26 +2,222 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Weather thing</title>
-	<link rel="stylesheet" href="css/weather_map.css">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
+	<title>Weather</title>
+	<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js">
+
+
+	<!-- MAPBOX API -->
+	<link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.1/mapbox-gl-geocoder.css' type='text/css' />
+	<style>
+
+		body {
+			background-color: mintcream;
+			text-align: center;
+		}
+
+		h5  {
+			padding-bottom: 20px;
+		}
+
+		.top-container {
+			background-color: white;
+		}
+
+		.container {
+			padding-top: 22px;
+		}
+
+		#map {
+			padding-top: 20px;
+			width: 59%;
+			height: 700px;
+			margin:0px auto;
+		}
+
+		.lng-lat-input{
+			padding-top: 10px;
+		}
+
+		.lng-input {
+			margin-top: 10px;
+		}
+
+		.submit {
+			margin-top: 10px;
+			margin-left: 123px;
+		}
+
+	</style>
 </head>
 <body>
-	<div class="container-fluid">
-		<div class="row">
-			<div id="today" class="card col-4"></div>
-			<div id="tomorrow" class="card col-4"></div>
-			<div id="thirdDay" class="card col-4"></div>
-		</div>
-	</div>
+
+<!--    BASIC HTML FOR WEATHER DISPLAY  -->
+<div class="top-container">
+	<i class="wi wi-cloud " style="font-size: 80px"></i>
+	<h1>Three Day Weather Forecast</h1>
+</div>
+<div class="container">
+	<div class='row' id="insertData"></div>
+</div>
+<br>
+<!--   LAT AND LNG INPUTS   -->
+<div id='map'></div>
+<div class="lng-lat-input container">
+	<input class="lat-input" type="text" placeholder="latitude">
+	<br>
+	<input class="lng-input" type="text" placeholder="longitude">
+	<br>
+	<button class="submit">Submit</button>
+
+</div>
+
+<br>
 
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="js/jquery-2.2.4.js"></script>
+<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.1/mapbox-gl-geocoder.min.js'></script>
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.3.0/mapbox-gl.css' rel='stylesheet' />
+
 <script src="js/keys.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-<script src="js/weather_map.js"></script>
+<script>
+
+
+    "use strict";
+    //-------------------- WEATHER ARRAY --------------------
+    var iconArr = [
+        {
+            iconName: "clear-day",
+            icon: 'fas fa-sun fa-3x'
+        },
+
+        {
+            iconName: "clear-night",
+            icon: 'as fa-moon fa-3x'
+        },
+
+        {
+            iconName: "rain",
+            icon: 'fas fa-cloud-rain fa-3x'
+        },
+
+        {
+            iconName: "snow",
+            icon: 'far fa-snowflake fa-3x'
+        },
+
+        {
+            iconName: "sleet",
+            icon: 'fas fa-cloud-rain fa-3x"></i><i class="fas fa-temperature-low'
+        },
+
+        {
+            iconName: "wind",
+            icon: 'fas fa-wind fa-3x'
+        },
+
+        {
+            iconName: "fog",
+            icon: 'fas fa-smog fa-3x'
+        },
+
+        {
+            iconName: "cloudy",
+            icon: 'fas fa-cloud fa-3x'
+        },
+
+        {
+            iconName: "partly-cloudy-day",
+            icon: 'fas fa-cloud-sun fa-3x'
+        },
+
+        {
+            iconName: "partly-cloudy-night",
+            icon: 'fas fa-cloud-moon fa-3x'
+        },
+	    {
+	        iconName: "thunderstorm",
+		    icon: 'fas fa-poo-storm fa-3x'
+	    }
+    ];
+    //  For loop that iterates through icons depending on the weather
+    function getIcon(input) {
+        for(var i = 0; i <= iconArr.length; i++) {
+            if(iconArr[i].iconName === input) {
+                return iconArr[i].icon;
+            }
+        }
+    }
+
+
+    mapboxgl.accessToken = mapboxToken;
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11',
+        center: [-98.4916, 29.4252],
+        zoom: 10
+    });
+
+    var lat = 29.424;
+    var long = -98.4936;
+
+    map.addControl(new MapboxGeocoder({
+        accessToken: mapboxgl.accessToken,
+        mapboxgl: mapboxgl,
+        marker: false
+    }));
+
+    var marker = new mapboxgl.Marker({
+        draggable: true
+    })
+        .setLngLat([long, lat])
+        .addTo(map);
+
+    map.on("moveend", function() {
+        marker.setLngLat(map.getCenter());
+        dragPoint();
+    });
+
+    function dragPoint() {
+        var lngLat = marker.getLngLat();
+        var newLat = lngLat.lng;
+        var newLng = lngLat.lat;
+
+
+
+
+
+        $.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSkyToken + "/" + newLng + "," + newLat).done(function(data) {
+            console.log(data);
+
+
+            var weatherHTML = "";
+            for(var i = 0; i <= 2; i++) {
+                weatherHTML += '<div class="col-4 card text-center">';
+                weatherHTML += '<h1>' + (data.daily.data[i].temperatureHigh).toFixed(0) + '&deg;|' +
+                    (data.daily.data[i].temperatureLow).toFixed(0) + '&deg;</h1>';
+
+                weatherHTML += '<i style="font-size: 30pt" class=" ' +
+                    getIcon(data.daily.data[i].icon) + '"></i>';        //icon display
+
+                weatherHTML += '<p><strong>' + data.daily.data[i].summary + ' </strong>' + '</p>';
+                weatherHTML += '<p><strong>Humidity: </strong>' +
+                    (data.daily.data[i].humidity * 100).toFixed(0) + "%" + '</p>';
+                weatherHTML += '<p><strong>Dew Point: </strong>' + (data.daily.data[i].dewPoint).toFixed(0) + '&deg;</p>';
+                weatherHTML += '<p><strong>Chance of Rain: </strong>' + ((data.daily.data[i].precipProbability) * 100) + '%</p>';
+                weatherHTML += '</div>';
+            }
+            $("#insertData").html(weatherHTML);
+        });
+    }
+    marker.on('drag', dragPoint);
+    dragPoint();
+
+</script>
 
 </body>
 </html>

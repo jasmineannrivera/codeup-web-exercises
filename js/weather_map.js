@@ -1,6 +1,24 @@
 (function () {
     "use strict";
+    var weatherHTML = "";
+    for(var i = 0; i <= 2; i++) {
+        weatherHTML += '<div class="col-4 card text-center">';
+        weatherHTML += '<h1>' + (data.daily.data[i].temperatureHigh).toFixed(0) + '&deg;/' +
+            (data.daily.data[i].temperatureLow).toFixed(0) + '&deg;</h1>';
 
+        weatherHTML += '<i style="font-size: 30pt" class="wi ' +
+            getIcon(data.daily.data[i].icon) + '"></i>';        //icon display
+
+        weatherHTML += '<p><strong>' + data.daily.data[i].summary + ' </strong>' + '</p>';
+        weatherHTML += '<p><strong>Humidity: </strong>' +
+            (data.daily.data[i].humidity * 100).toFixed(0) + '</p>';
+        weatherHTML += '<p><strong>Wind: </strong>' + data.daily.data[i].windSpeed + '</p>';
+        weatherHTML += '<p><strong>Pressure: </strong>' + data.daily.data[i].pressure + '</p>';
+        weatherHTML += '</div>';
+    }
+    $("#insertData").html(weatherHTML);
+});
+}
 
     function generateWeather() {
 

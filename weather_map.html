@@ -6,6 +6,7 @@
 	<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 	<link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js">
 
 
@@ -14,9 +15,10 @@
 	<style>
 
 		body {
-			background-color: #AD9AAC;
+			background-color: #DDD5D0;
 			text-align: center;
 			font-family: 'Noto Sans JP', sans-serif;
+			color: #14091A;
 
 		}
 
@@ -25,7 +27,7 @@
 		}
 
 		.top-container {
-			background-color: #AD9AAC;
+			background-color: #DDD5D0;
 
 		}
 
@@ -67,6 +69,16 @@
 			background-color: #9B839A;
 		}
 
+		a {
+			color: #14091A;
+			font-size: 18px;
+		}
+
+		a:hover {
+			color: white;
+			text-decoration: none;
+		}
+
 	</style>
 </head>
 <body>
@@ -74,7 +86,7 @@
 <!--    BASIC HTML FOR WEATHER DISPLAY  -->
 <div class="top-container">
 	<i class="wi wi-cloud " style="font-size: 80px"></i>
-	<h1>Three Day Hair Forecast</h1>
+	<h1>☔ Three Day Hair Forecast ☔</h1>
 </div>
 <div class="container">
 	<div class='row' id="insertData"></div>
@@ -99,6 +111,7 @@
 <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.1/mapbox-gl-geocoder.min.js'></script>
 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
 <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.3.0/mapbox-gl.css' rel='stylesheet' />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 
 <script src="js/keys.js"></script>
 <script>
@@ -155,6 +168,9 @@
     // tricky: Rome
     // optimal: Sydney
     // humid: Here
+
+    //long 30.2752
+    //lat 98.8720
 
 
 
@@ -213,11 +229,10 @@
                 weatherHTML += '<p><strong>Dew Point: </strong>' + (data.daily.data[i].dewPoint).toFixed(0) + '&deg;</p>';
                 weatherHTML += '<p><strong>Chance of Rain: </strong>' + (((data.daily.data[i].precipProbability) * 100).toFixed(0)) + '%</p>';
                 var hair = getHairAdvice(data.daily.data[i].dewPoint);
-                console.log(hair.emollient);
                 weatherHTML += '<p><strong>' + hair.summary + '</strong></p>';
                 weatherHTML += '<p>' + hair.hairForecast + '</p>';
-                weatherHTML += '<p>' + hair.humectant + '</p>';
-                weatherHTML += '<p>' + hair.emollient + '</p>';
+                weatherHTML += '<p>' + hair.humectant + '<a href = "#" data-toggle="tooltip" title="Humectants are materials used in products to moisturize dry or damaged hair.  They promote moisture retention by attracting water molecules from the local environment and binding them to specific sites along their structure. Ex: Glycerin, Propylene glycol, Hyaluronic acid."> * </a>' + '</p>';
+                weatherHTML += '<p>' + hair.emollient + '<a href = "#" data-toggle="tooltip" title="Emollients are usually hydrophobic oils that form films on the surface of the hair, where they often act as anti-humectants or sealers.  They are lubricants and provide increased slip (decreased drag) between adjacent hair strands, which makes detangling much easier. Ex: silicones, oils and butters, proteins and hydrolyzed proteins."> * </a>' + '</p>';
                 weatherHTML += '</div>';
             }
 
@@ -231,3 +246,8 @@
 
 </body>
 </html>
+
+<!--Humectants are materials used in products to moisturize dry or damaged hair.  They promote moisture retention by attracting water molecules from the local environment and binding them to specific sites along their structure. Ex: Glycerin, Propylene glycol, Hyaluronic acid.-->
+
+
+<!--Emollients are usually hydrophobic oils that form films on the surface of the hair, where they often act as anti-humectants or sealers.  They are lubricants and provide increased slip (decreased drag) between adjacent hair strands, which makes detangling much easier. Ex: silicones, oils and butters, proteins and hydrolyzed proteins.-->

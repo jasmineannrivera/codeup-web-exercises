@@ -65,8 +65,10 @@ const users = [
 
 
 // Use .reduce to get the longest email from the list of users.
+        let longestEmail = users.reduce((currentLongest, user) => user.email.length > currentLongest.length ? user.email : currentLongest,'j');
+console.log(longestEmail);
 
-        let emails = users.map(users => users.email);
+let emails = users.map(users => users.email);
 
         let users4 = emails.sort(
     (x, y) => y.length - x.length
@@ -86,4 +88,6 @@ const users = [
 
 
 
+    let newNames = users.reduce((sentence, user) => sentence === '' ? user.name : sentence + ', ' + user.name );
 
+console.log(newNames);

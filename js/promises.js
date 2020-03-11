@@ -39,7 +39,7 @@ const lastCommit = (userName) => {
     fetch(`https://api.github.com/users/${userName}/events`, {headers: {'Authorization': 'token bc3d1c18daa4bcc0812d779bcda880296e067214   '}})
         .then(response => response.json())
         .then(data => {
-            console.log(data[0].created_at); // Prints result from `response.json()` in getRequest
+            console.log(new Date(data[0].created_at)); // Prints result from `response.json()` in getRequest
         })
         .catch(error => console.error(error))
 };
